@@ -1,28 +1,55 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{mymacros}[2014/11/14 My Macros Package]
 
+
+
 \RequirePackage{datetime}
 
-\RequirePackage{ifthen}
 
 
-\provideboolean{macrosOn}
-\setboolean{macrosOn}{false}
+%
+% Package Options
+%
 
+
+
+\DeclareOption{macrosOff}{
+%
+\providecommand{\PrintDate}{}
+%
+\providecommand{\Intent}[1]{}
+%
+\providecommand{\InputSection}[1]{\input{#1}}
+%
+\providecommand{\DraftStatus}[1]{}
+%
+\providecommand{\PageBreak}{}
+}
+
+
+
+\DeclareOption{macrosOn}{
+%
 % Use to print date (generally on first page).
-\newcommand{\PrintDate}{\ifthenelse{\boolean{macrosOn}}{\mmddyyyydate{} {\small ** \today{} \currenttime{} **}\\}{}}
-
+\renewcommand{\PrintDate}{\mmddyyyydate{} {\footnotesize\bf** \today{} \currenttime{} **}\\}
+%
 % Denote the intent of a paragraph.
-\newcommand{\Intent}[1]{\ifthenelse{\boolean{macrosOn}}{{\footnotesize\bf**#1**}\\}{}}
+\renewcommand{\Intent}[1]{{\footnotesize\bf**#1**}\\}
+%
+\renewcommand{\InputSection}[1]{\input{#1}\clearpage}
+%
+\renewcommand{\DraftStatus}[1]{ {\scriptsize\bf**D#1}}
+%
+\renewcommand{\PageBreak}{\clearpage}
+}
 
-\newcommand{\InputSection}[1]{\ifthenelse{\boolean{macrosOn}}{\input{#1}\clearpage}{\input{#1}}}
 
-\newcommand{\Section}[2]{\ifthenelse{\boolean{macrosOn}}{\section{#1 **D#2}}{\section{#1}}}
 
-\newcommand{\PageBreak}{\ifthenelse{\boolean{macrosOn}}{\clearpage}{}}
+\ExecuteOptions{macrosOff}
 
-%\renewcommand{\InputSection}[1]{\input{#1}\clearpage}
-%\renewcommand{\PageBreak}{\clearpage}
+\ProcessOptions\relax
+
+
 
 %
 % Callouts
@@ -33,6 +60,7 @@
 \newcommand{\CalloutSection}[1]{Section~\ref{#1}}
 \newcommand{\CalloutSectionsAThruZ}[2]{Sections~\ref{#1}--\ref{#2}}
 \newcommand{\CalloutTable}[1]{Table~\ref{#1}}
+
 
 
 \endinput
