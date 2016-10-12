@@ -1,0 +1,71 @@
+\documentclass[11pt, letterpaper, onecolumn]{article}
+
+\usepackage{fullpage}
+\usepackage{times}
+
+\usepackage{graphicx}
+
+\usepackage[pdftex]{hyperref}
+\hypersetup{pdftitle={}, pdfauthor={}, pdfkeywords={}, bookmarksnumbered, pdfstartview={FitH}, colorlinks, citecolor=black, filecolor=black, linkcolor=black, urlcolor=black, breaklinks=true}
+
+%
+% SDF's macros!
+%
+\usepackage{mymacros}
+\setboolean{macrosOn}{true}
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Awesome Title Goes Here}
+
+\author{%
+Scott D. Fleming\\%
+Department of Computer Science\\%
+University of Memphis\\%
+Memphis, Tennessee, USA\\%
+\href{mailto:Scott.Fleming@memphis.edu}{Scott.Fleming@memphis.edu}%
+}
+
+\date{December 2, 2015}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{My Section}
+
+
+\subsection{My Subsection}
+
+
+
+\Intent{Before each paragraph, tell in casual language what the point is.}
+%
+Topic \emph{sentence} goes first (should mostly match the Intent).
+%
+Sentences following the topic sentence support the topic with description.
+%
+Here's how to do a reference~\cite{Robillard2004TSE}.
+
+
+
+\Intent{Before each paragraph, tell in casual language what the point is.}
+%
+Topic sentence goes first (should mostly match the Intent).
+%
+Sentences following the topic sentence support the topic with description.
+%
+Here's how to do a reference~\cite{Robillard2004TSE}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{abbrv}
+\bibliography{refs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

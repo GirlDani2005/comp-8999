@@ -1,0 +1,58 @@
+
+#
+# LaTeX temporary files
+#
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex.gz
+main.pdf
+
+#
+# JabRef temporary files
+#
+*.bak
+
+#
+# macOS files
+#
+.DS_Store
+
+#
+# General temporary files
+#
+*.tmp
+
+#
+# Microsoft temporary files
+#
+# Word temporary
+~$*.doc*
+# Excel temporary
+~$*.xls*
+# Excel Backup File
+*.xlk
+# PowerPoint temporary
+~$*.ppt*
+# Visio autosave temporary files
+*.~vsdx
+
